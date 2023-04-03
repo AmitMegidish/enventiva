@@ -7,7 +7,7 @@ export const currencyApi = createApi({
     reducerPath: 'currencyApi',
     baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
     endpoints: (builder) => ({
-        getAllCurrencies: builder.query<any, string>({
+        getAllCurrencies: builder.query<Record<string, string>, string>({
             query: () => "currencies.json",
         }),
     })
