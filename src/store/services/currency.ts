@@ -10,7 +10,15 @@ export const currencyApi = createApi({
         getAllCurrencies: builder.query<Record<string, string>, string>({
             query: () => "currencies.json",
         }),
+        getLatestRates: builder.query({
+            query: () => ({
+                url: `latest.json`,
+                params: {
+                    app_id: "0aacc787fe4841779f7301e0cdaf4881",
+                }
+            }),
+        })
     })
 });
 
-export const { useGetAllCurrenciesQuery } = currencyApi;
+export const { useGetAllCurrenciesQuery, useGetLatestRatesQuery } = currencyApi;
