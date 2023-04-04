@@ -37,6 +37,7 @@ const Converter: React.FC<Props> = ({ currencies }) => {
                 onSubmit={handleSubmit}
             >
                 <input
+                    className='p-2 w-full rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
                     type="number"
                     min={1}
                     name="amount"
