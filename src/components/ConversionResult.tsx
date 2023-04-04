@@ -11,15 +11,20 @@ interface Props {
 const ConversionResult: React.FC<Props> = ({ to, from, amount }) => {
     const { data, isLoading, error } = useGetLatestRatesQuery("");
 
-    console.log(data)
+    let conversionText = '';
+
+    if (data) {
+        conversionText = `${amount} ${from} = ${data.rates[to] * amount} ${to}`;
+    }
 
     return (
         <>
+            <br />
             {isLoading && <Spinner />}
-            {error && 'status' in error && <h1>{JSON.stringify(error)}</h1>}
-            {data && <h1>{data.rates[to] * amount}</h1>}
+            {error && 'status' in error && <h1>{error.status}</h1>}
+            {data && <span>{conversionText}</span>}
         </>
     );
-}
+};
 
 export default ConversionResult;

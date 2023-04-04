@@ -1,11 +1,10 @@
 import React from "react";
 
-type Props = {
+interface Props {
     text: string,
-    type: "submit" | "button",
+    type?: "submit" | "button",
     onClick?: () => void,
     disabled?: boolean
-
 }
 
 const Button: React.FC<Props> = ({ text, onClick, disabled, type }) => {

@@ -15,7 +15,7 @@ const Converter: React.FC<Props> = ({ currencies }) => {
         amount: 1
     });
 
-    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 
     const handleChange = useCallback((e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
         setIsSubmitted(false);
@@ -25,10 +25,10 @@ const Converter: React.FC<Props> = ({ currencies }) => {
         }))
     }, []);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = useCallback((e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitted(true);
-    }
+    }, []);
 
     return (
         <>

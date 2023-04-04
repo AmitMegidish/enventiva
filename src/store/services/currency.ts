@@ -14,7 +14,7 @@ export const currencyApi = createApi({
             query: () => ({
                 url: `latest.json`,
                 params: {
-                    app_id: "0aacc787fe4841779f7301e0cdaf4881",
+                    app_id: import.meta.env.VITE_APP_ID,
                 }
             }),
         })

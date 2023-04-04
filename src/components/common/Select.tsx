@@ -9,6 +9,7 @@ interface Props {
 }
 
 const Select: React.FC<Props> = ({ optionsArray, onChange, value, name }) => {
+
     return (
         <select
             value={value}
@@ -27,4 +28,4 @@ const Select: React.FC<Props> = ({ optionsArray, onChange, value, name }) => {
         </select>
     )
 }
-export default Select;
+export default React.memo(Select);
